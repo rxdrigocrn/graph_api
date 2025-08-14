@@ -197,9 +197,13 @@ public class Graph {
      *                                  {@code 0 <= w < V}
      */
     public void addEdge(int v, int w) {
-        if (v == w) throw new IllegalArgumentException("Não pode self-loop");
-        if (adj[v].contains(w)) throw new IllegalArgumentException("Arestas pararelas não são permitidas");
-
+        if (v == w) throw new IllegalArgumentException("self-loops are not allowed");
+         for (int neighbor : adj[v]) {
+            if (neighbor == w) {
+                throw new IllegalArgumentException("parallel edges are not allowed");
+            }
+        }
+ 
         validateVertex(v);
         validateVertex(w);
         E++;

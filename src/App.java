@@ -4,8 +4,9 @@ public class App {
 
     public static void main(String[] args) {
         Graph graph = new Graph(12);
-        graph.addEdge(8, 4);
-        graph.addEdge(3, 3);
+        graph.addEdge(0, 1);
+         graph.addEdge(8, 4);
+        graph.addEdge(2, 3);
         graph.addEdge(1, 11);
         graph.addEdge(0, 6);
         graph.addEdge(3, 6);
@@ -20,7 +21,6 @@ public class App {
         graph.addEdge(5, 0);
         graph.addEdge(8, 1);
         graph.addEdge(4, 1);
-
 
         System.out.println("Graph created with 12 vertices and the following edges:");
         for (int v = 0; v < graph.V(); v++) {
